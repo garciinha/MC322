@@ -9,69 +9,33 @@ public abstract class Heroi extends Elemento implements ElementoMovel {
     /**
      * Default constructor
      */
-    public Heroi() {
+    public Heroi(String nome) {
+        this.nome = nome;
+        this.movimento = 0;
+        
     }
-
-    /**
-     * 
-     */
+    
     private String nome;
-
-    /**
-     * 
-     */
     private int dadosAtaque;
-
-    /**
-     * 
-     */
     private int dadosDefesa;
-
-    /**
-     * 
-     */
+    private int movimento;
     private int vida;
-
-    /**
-     * 
-     */
     private int inteligencia;
-
-    /**
-     * 
-     */
-    private Set<Item> mochila;
-
-    /**
-     * 
-     */
+    private Item mochila;
     private Arma ArmasAtuais;
-
-    /**
-     * 
-     */
     private int bonusAtaque;
-
-    /**
-     * 
-     */
     private int bonusDefesa;
-
-    /**
-     * 
-     */
     private int bonusMovimento;
 
-    /**
-     * 
-     */
-    public Ponto posicao;
 
-    /**
-     * 
-     */
+    private Ponto posicao;
+
     public void jogarDadosAndar() {
-        // TODO implement here
+        
+        DadoVermelho dado = new DadoVermelho();
+        movimento += dado.jogar();
+        movimento += dado.jogar();
+        
     }
 
     /**
