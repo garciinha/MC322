@@ -11,7 +11,7 @@ public class DadoCombate extends Dado {
      * Default constructor
      */
     public DadoCombate() {
-        faces = new Lado[] {ESCUDO_MONSTRO, ESCUDO_HEROI, ESCUDO_HEROI, CAVEIRA, CAVEIRA, CAVEIRA};
+        faces = new Lado[] {Lado.ESCUDO_MONSTRO, Lado.ESCUDO_HEROI, Lado.ESCUDO_HEROI, Lado.CAVEIRA, Lado.CAVEIRA, Lado.CAVEIRA};
     }
 
 
