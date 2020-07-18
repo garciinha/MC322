@@ -55,14 +55,20 @@ public abstract class Heroi extends Elemento implements ElementoMovel {
     /**
      * 
      */
-    public void atacar() {
-        // TODO implement here
+    public void atacar(Monstro inimigo) {
+        DadoCombate dado = new DadoCombate();
+        int ataque = 0;
+        for(int i = 0; i < this.bonusAtaque; i++) {
+            if(dado.jogar() == Lado.Caveira)
+                ataque++;
+        }
+        Monstro.defender(ataque);
     }
 
     /**
      * 
      */
-    public void defender() {
+    public void defender(int ataque) {
         // TODO implement here
     }
 
