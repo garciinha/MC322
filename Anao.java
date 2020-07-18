@@ -9,8 +9,6 @@ public class Anao extends Heroi {
     private static int ATQ_INICIAL = 2;
     private static int DFS_INICIAL = 2;
 
-    //ttt
-
     /**
      * Default constructor
      */
