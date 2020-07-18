@@ -20,8 +20,10 @@ public class DadoVermelho extends Dado {
     /**
      * 
      */
-    public void jogar() {
+    public int jogar() {
         // TODO implement here
+        Random valor = new Random();
+        return valor.nextInt(6) + 1;
     }
 
 }
