@@ -20,7 +20,7 @@ public abstract class Monstro extends Elemento implements ElementoMovel, Element
     /**
      * 
      */
-    public void defender() {
+    public void defender(int ataque) {
         // TODO implement here
     }
 
