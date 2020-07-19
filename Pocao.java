@@ -20,8 +20,6 @@ public abstract class Pocao extends Item {
     /**
      * 
      */
-    public void usar() {
-        // TODO implement here
-    }
+    public abstract void usar();
 
 }
