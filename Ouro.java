@@ -21,5 +21,8 @@ public class Ouro extends Item {
      * 
      */
     public static int[] valores;
+    public string getInformation(){
+        return valor+" Moedas de ouro";
+    }
 
 }
