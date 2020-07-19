@@ -11,7 +11,7 @@ public abstract class Heroi extends Elemento implements ElementoMovel {
     private int movimento;
     private int vida;
     private int inteligencia;
-    private Item mochila;
+    private List<Item> mochila=new ArrayList<Item>();
     private Arma ArmasAtuais;
     private int bonusAtaque;
     private int bonusDefesa;
@@ -77,7 +77,10 @@ public abstract class Heroi extends Elemento implements ElementoMovel {
      * 
      */
     public void verMochila() {
-        // TODO implement here
+        String conteudo="O conteudo da mochila eh:";
+        for(Item item: mochila)
+            conteudo+=" "+item.getInformation()
+        System.out.println(conteudo); 
     }
 
     /**
