@@ -16,5 +16,6 @@ public abstract class Item {
      * 
      */
     public boolean descartavel;
+    public abstract string getInformation();
 
 }
