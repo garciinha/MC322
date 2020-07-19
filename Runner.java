@@ -5,12 +5,8 @@ import java.util.*;
  * 
  */
 public class Runner {
-
-    /**
-     * Default constructor
-     */
-    public Runner() {
+    public static void main(String[] args) {
+        Game g = new Game();
+        g.start();
     }
-
-
 }
