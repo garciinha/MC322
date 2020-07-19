@@ -15,13 +15,6 @@ public abstract class Dado {
     /**
      * 
      */
-    public void Attribute1;
-
-    /**
-     * 
-     */
-    public void jogar() {
-        // TODO implement here
-    }
+    public abstract void jogar();
 
 }
