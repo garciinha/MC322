@@ -1,15 +1,11 @@
 
 import java.util.*;
 
-/**
- * 
- */
 public abstract class Magia {
 
-    /**
-     * Default constructor
-     */
     public Magia() {
     }
+
+    protected abstract void lancarMagia(Combativel origem, Combativel alvo);
 
 }

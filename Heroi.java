@@ -4,52 +4,44 @@ import java.util.*;
 /**
  *
  */
-public abstract class Heroi extends Elemento implements ElementoMovel {
-    private String nome;
-    private int dadosAtaque;
-    private int dadosDefesa;
-    private int movimento;
-    private int vida;
-    private int inteligencia;
-    private List<Item> mochila=new ArrayList<Item>();
-    private Arma ArmasAtuais;
-    private int bonusAtaque;
-    private int bonusDefesa;
-    private int bonusMovimento;
-    private Ponto posicao;
+public abstract class Heroi extends Elemento implements Combativel {
+    protected String nome;
+    protected int dadosAtaque;
+    protected int dadosDefesa;
+    protected int movimento;
+    protected int vida;
+    protected int inteligencia;
+    protected List<Item> mochila=new ArrayList<Item>();
+    protected Arma ArmasAtuais;
+    protected int bonusAtaque;
+    protected int bonusDefesa;
+    protected int bonusMovimento;
+    protected Ponto posicao;
 
-    public Heroi(String nome) {
+    protected Heroi(String nome) {
         this.nome = nome;
         this.movimento = 0;
-
     }
 
-    public void jogarDadosAndar() {
+    int getInteligencia() {
+      return this.inteligencia;
+    }
 
+    protected void jogarDadosAndar() {
         DadoVermelho dado = new DadoVermelho();
         movimento += dado.jogar();
         movimento += dado.jogar();
-
     }
 
-    /**
-     *
-     */
-    public void jogarDadosAtaque() {
+    protected void jogarDadosAtaque() {
         // TODO implement here
     }
 
-    /**
-     *
-     */
-    public void movimentar() {
+    protectedvoid movimentar() {
         // TODO implement here
     }
-
-    /**
-     *
-     */
-    public void atacar(Monstro inimigo) {
+    @Override
+    protected void atacar(Monstro inimigo) {
         DadoCombate dado = new DadoCombate();
         int ataque = 0;
         for(int i = 0; i < this.bonusAtaque; i++) {
@@ -58,11 +50,8 @@ public abstract class Heroi extends Elemento implements ElementoMovel {
         }
         Monstro.defender(ataque);
     }
-
-    /**
-     *
-     */
-    public void defender(int ataque) {
+    @Override
+    protected void defender(int ataque) {
       DadoCombate dado = new DadoCombate();
       int defesa = 0;
       for(int i = 0; i < this.bonusDefesa; i++) {
@@ -75,27 +64,32 @@ public abstract class Heroi extends Elemento implements ElementoMovel {
       }
     }
 
-    /**
-     *
-     */
-    public void vasculhar() {
+    @Override
+    protected void defesaMagica(int ataque) {
+      DadoCombate dado = new DadoCombate();
+      int defesa = 0;
+      for(int i = 0; i < this.inteligencia; i++) {
+          if(dado.jogar() == Lado.ESCUDO_HEROI)
+              defesa++;
+      }
+      int resultado = ataque - defesa;
+      if(resultado > 0) {
+        this.vida -= resultado;
+      }
+    }
+
+    protected void vasculhar() {
         // TODO implement here
     }
 
-    /**
-     *
-     */
-    public void verMochila() {
+    protected void verMochila() {
         String conteudo="O conteudo da mochila é:";
-        for(Item item: mochila)
+        for(Item item : mochila)
             conteudo+=" "+item.getInformation()
         System.out.println(conteudo);
     }
 
-    /**
-     *
-     */
-    public void mover(direcao: char)() {
+    protected void mover(direcao: char)() {
         // TODO implement here
     }
 
