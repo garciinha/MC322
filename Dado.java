@@ -8,7 +8,10 @@ public abstract class Dado {
 
     public Dado() {
     }
-
-    public abstract void jogar();
+    
+    public int aleatorio(int numLados){
+        Random valor = new Random();
+        return valor.nextInt(numLados) + 1;
+    }
 
 }
