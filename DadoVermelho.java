@@ -7,9 +7,7 @@ public class DadoVermelho extends Dado {
     }
 
     public int jogar() {
-        // TODO implement here
-        Random valor = new Random();
-        return valor.nextInt(6) + 1;
+        return aleatorio(6);
     }
 
 }
