@@ -10,9 +10,7 @@ public class DadoCombate extends Dado {
     }
 
     public Lado jogar() {
-        Random resultado = new Random[];
-        return faces[resultado.nextInt(6) + 1];
-        // TODO implement here
+        return faces[aleatorio(6)];
     }
 
 }
