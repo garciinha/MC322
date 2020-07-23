@@ -2,24 +2,14 @@
 import java.util.*;
 
 /**
- * 
+ *
  */
 public abstract class Elemento {
 
-    /**
-     * Default constructor
-     */
     public Elemento() {
     }
+    protected boolean visivel;
 
-    /**
-     * 
-     */
-    private boolean visivel;
-
-    /**
-     * 
-     */
-    public Ponto posicao;
+    protected Ponto posicao;
 
 }

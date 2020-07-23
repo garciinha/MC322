@@ -4,19 +4,14 @@ import java.util.*;
 /**
  *
  */
-public abstract class Heroi extends Elemento implements Combativel {
+public abstract class Heroi extends ElementoCombate{
     protected String nome;
-    protected int dadosAtaque;
-    protected int dadosDefesa;
     protected int movimento;
-    protected int vida;
-    protected int inteligencia;
     protected List<Item> mochila=new ArrayList<Item>();
     protected Arma ArmasAtuais;
     protected int bonusAtaque;
     protected int bonusDefesa;
     protected int bonusMovimento;
-    protected Ponto posicao;
 
     protected Heroi(String nome) {
         this.nome = nome;
@@ -37,19 +32,10 @@ public abstract class Heroi extends Elemento implements Combativel {
         // TODO implement here
     }
 
-    protectedvoid movimentar() {
+    protected void movimentar() {
         // TODO implement here
     }
-    @Override
-    protected void atacar(Monstro inimigo) {
-        DadoCombate dado = new DadoCombate();
-        int ataque = 0;
-        for(int i = 0; i < this.bonusAtaque; i++) {
-            if(dado.jogar() == Lado.CAVEIRA)
-                ataque++;
-        }
-        Monstro.defender(ataque);
-    }
+
     @Override
     protected void defender(int ataque) {
       DadoCombate dado = new DadoCombate();
