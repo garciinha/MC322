@@ -22,10 +22,11 @@ public abstract class Heroi extends ElementoCombate{
       return this.inteligencia;
     }
 
-    protected void jogarDadosAndar() {
+    protected int jogarDadosAndar() {
         DadoVermelho dado = new DadoVermelho();
         movimento += dado.jogar();
         movimento += dado.jogar();
+        return this.movimento;
     }
 
     protected void jogarDadosAtaque() {
