@@ -10,6 +10,16 @@ public class Game {
     public void start() {
         exit = false;
         System.out.println("Game started!");
+        Scanner key = new Scanner(System.in);
+        Heroi personagem;
+        System.out.println("Qual será o nome do seu personagem?");
+        String nome = key.nextLine();
+        System.out.println("Qual será sua classe (Digite o número): 1. Anão, 2.Bárbaro, 3. Elfo, 4. Feiticeiro.");
+        int class = key.nextInt();
+        if(class == 1) personagem = new Anao(nome);
+        else if(class == 2) personagem = new Barbaro(nome);
+        else if(class == 3) personagem = new Elfo(nome);
+        else if(class == 4) personagem = new Feiticeiro(nome);       
         while(!exit) {
             drawBoard();
             lerInput();
@@ -19,7 +29,7 @@ public class Game {
     }
 
     public void lerInput() {
-        Scanner keyboard = new Scanner ( System.in ) ;
+        Scanner keyboard = new Scanner (System.in) ;
         boolean acaoDisponivel = true;
         boolean podeAndar = true;
         boolean  jogadorNaoDesistiu = true;
