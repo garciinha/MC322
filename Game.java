@@ -29,14 +29,16 @@ public class Game {
     }
 
     public void lerInput() {
+        int movimento = personagem.jogarDadosAndar();
+        System.out.println("Você pode andar " + movimento + " casas esse turno.");
         Scanner keyboard = new Scanner (System.in) ;
         boolean acaoDisponivel = true;
         boolean podeAndar = true;
         boolean  jogadorNaoDesistiu = true;
         while (jogadorNaoDesistiu && (acaoDisponivel || podeAndar) ) {
-            System.out.print(" Digite a direcao que deseja andar (wasd), acao (acao) ou desistir(caso queira passar para a proxima rodada) (pass) : ") ;
+            System.out.println(" Digite um dos seguintes comandos: \"w-a-s-d\" caso queira andar, \"acao\" caso queira tomar alguma acao com seu personagem ou \"pass\" para passar para a proxima rodada.") ;
             String command = keyboard.nextLine() ;
-            if ( command.compareTo ("pass") == 0) {
+            if (command.compareTo ("pass") == 0) {
                 jogadorNaoDesistiu = false ;
             } else if ( command.compareTo ("w") == 0) {
                 //funcao de andar
