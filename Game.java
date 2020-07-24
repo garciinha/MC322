@@ -33,25 +33,24 @@ public class Game {
         System.out.println("Você pode andar " + movimento + " casas esse turno.");
         Scanner keyboard = new Scanner (System.in) ;
         boolean acaoDisponivel = true;
-        boolean podeAndar = true;
         boolean  jogadorNaoDesistiu = true;
-        while (jogadorNaoDesistiu && (acaoDisponivel || podeAndar) ) {
+        while (jogadorNaoDesistiu && (acaoDisponivel || movimento>0) ) {
             System.out.println(" Digite um dos seguintes comandos: \"w-a-s-d\" caso queira andar, \"acao\" caso queira tomar alguma acao com seu personagem ou \"pass\" para passar para a proxima rodada.") ;
             String command = keyboard.nextLine() ;
             if (command.compareTo ("pass") == 0) {
                 jogadorNaoDesistiu = false ;
             } else if ( command.compareTo ("w") == 0) {
                 //funcao de andar
-                //verifica se ainda pode andar, caso nao modifica o podeAndar parar false;
+                movimento-=1;
             } else if ( command.compareTo ("a") == 0) {
                 //funcao de andar
-                //verifica se ainda pode andar, caso nao modifica o podeAndar parar false;
+                movimento-=1;
             } else if ( command.compareTo ("s") == 0) {
                 //funcao de andar
-                //verifica se ainda pode andar, caso nao modifica o podeAndar parar false;
+                movimento-=1;
             } else if ( command.compareTo ("d") == 0) {
                 //funcao de andar
-                //verifica se ainda pode andar, caso nao modifica o podeAndar parar false;
+                movimento-=1;
             } else if ( command.compareTo ("acao") == 0) {
                 if(!acaoDisponivel) {
                     System.out.println("Voce nao pode realizar uma acao agora.");
